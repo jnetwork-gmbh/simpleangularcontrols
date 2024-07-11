@@ -1,0 +1,77 @@
+<div
+  class="row form-group"
+  [class.has-error]="invalid && (dirty || touched)"
+  [ngClass]="componentHeight | toLabelHeight"
+>
+  <label
+    *ngIf="disablelabel === false && !isAdaptiveLabel"
+    id="{{name}}label"
+    for="{{name}}"
+    class="col-xs-12 control-label"
+    [ngClass]="[disablelabel === false ? (this.labelSizes | toLabelWidthCss) : 'sr-only' ]"
+    [class.required]="isrequired"
+    >{{label}}</label
+  >
+  <div
+    class="col-xs-12"
+    [ngClass]="[disablelabel === false ?  (this.labelSizes | toControlWidthCss) : '']"
+  >
+    <select
+      #dropdownitem
+      id="{{name}}"
+      name="{{name}}"
+      class="form-control"
+      [ngClass]="[componentHeight | toControlHeight]"
+      (blur)="onTouch()"
+      (change)="setValue(dropdownitem.value)"
+      [disabled]="isdisabled"
+    >
+      <option *ngIf="emptylabel !== ''" [ngValue]="emptyvalue">
+        {{emptylabel}}
+      </option>
+
+      <ng-content></ng-content>
+
+      <ng-container *ngIf="groupitems === ''">
+        <option
+          *ngFor="let item of options"
+          [ngValue]="optionvalue ? item[optionvalue] : item"
+          [disabled]="optionenabled !== '' && item[optionenabled] === false"
+        >
+          <ng-template
+            *ngTemplateOutlet="optionlabeltemplate || defaultItemLabelTemplate;context:{ label: item[optionlabel], item: item }"
+          >
+          </ng-template>
+        </option>
+      </ng-container>
+
+      <ng-container *ngIf="groupitems !== ''">
+        <optgroup
+          *ngFor="let group of options"
+          [attr.label]="group[grouplabel]"
+        >
+          <option
+            *ngFor="let item of group[groupitems]"
+            [ngValue]="optionvalue ? item[optionvalue] : item"
+            [disabled]="optionenabled !== '' && item[optionenabled] === false"
+          >
+            <ng-template
+              *ngTemplateOutlet="optionlabeltemplate || defaultItemLabelTemplate;context:{ label: item[optionlabel], item: item }"
+            >
+            </ng-template>
+          </option>
+        </optgroup>
+      </ng-container>
+    </select>
+    <div
+      class="help-block help-block-error"
+      *ngIf="isinlineerrorenabled && invalid && (dirty || touched)"
+    >
+      {{ GetErrorMessage() | async }}
+    </div>
+  </div>
+</div>
+
+<ng-template #defaultItemLabelTemplate let-label="label">
+  {{label}}
+</ng-template>

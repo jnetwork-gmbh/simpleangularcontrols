@@ -1,0 +1,46 @@
+<div class="row form-group" [class.no-gutters]="disablelabel">
+  <label
+    *ngIf="disablelabel === false && !isAdaptiveLabel"
+    id="{{name}}_label"
+    for="{{name}}"
+    class="col-12 col-form-label"
+    [ngClass]="[disablelabel === false ? (this.labelSizes | toLabelWidthCss) : 'sr-only', componentHeight | toLabelHeight]"
+    [class.required]="isrequired"
+    >{{label}}</label
+  >
+  <div
+    class="col-12"
+    [ngClass]="[disablelabel === false ?  (this.labelSizes | toControlWidthCss) : '']"
+  >
+    <div
+      class="input-group"
+      [class.input-group-sm]="componentHeight === ControlHeight.Small"
+      [class.input-group-lg]="componentHeight === ControlHeight.Large"
+    >
+      <input
+        id="{{name}}"
+        name="{{name}}"
+        type="text"
+        class="form-control"
+        [value]="value"
+        [attr.placeholder]="placeholder"
+        (blur)="onTouch()"
+        (input)="setValue($event.target.value)"
+        [attr.maxlength]="maxlength"
+        [class.is-invalid]="invalid && (dirty || touched)"
+        [ngClass]="[componentHeight | toControlHeight]"
+        [disabled]="isdisabled"
+        [readonly]="readonly"
+      />
+      <div class="input-group-append">
+        <input
+          type="submit"
+          class="btn btn-secondary"
+          id="{{name}}_search"
+          (click)="searchClick()"
+          [value]="buttontext"
+        />
+      </div>
+    </div>
+  </div>
+</div>
