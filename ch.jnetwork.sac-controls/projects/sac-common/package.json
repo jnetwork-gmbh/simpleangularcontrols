@@ -4,7 +4,7 @@
   "peerDependencies": {
     "@angular/common": "^10.1.5",
     "@angular/core": "^10.1.5",
-    "moment": "~2.29.4",
+    "moment": "~2.29.1",
     "angular-imask": "6.0.5",
     "ngx-uploadx": "3.5.2"
   },
