@@ -8,8 +8,15 @@
       class="col-form-label"
       [ngClass]="componentHeight | toLabelHeight"
       *ngIf="!disablelabel"
-      >{{label}}</label
-    >
+      >{{label}}<sac-tooltip
+        *ngIf="helptextmode === 'tooltip' && helptext"
+        [tooltiptext]="helptext"
+        [inlinemode]="true"
+        ><span
+          [ngClass]="HelptextTooltipIcon"
+          class="ml-1"
+        ></span> </sac-tooltip
+    ></label>
   </div>
   <div
     class="col-12"
@@ -18,5 +25,12 @@
     [class.pt-2]="componentHeight !== ControlHeight.Small"
   >
     <ng-content></ng-content>
+    <small
+      *ngIf="helptextmode === 'text' && helptext"
+      class="help-block"
+      class="form-text text-muted"
+    >
+      {{helptext}}
+    </small>
   </div>
 </div>
