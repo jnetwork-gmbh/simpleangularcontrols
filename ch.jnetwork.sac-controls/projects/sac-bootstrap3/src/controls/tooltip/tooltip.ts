@@ -1,5 +1,5 @@
+import { ChangeDetectorRef, Component, ElementRef } from '@angular/core';
 import { SacTooltipCommon } from '@simpleangularcontrols/sac-common';
-import { Component, ChangeDetectorRef, ElementRef } from '@angular/core';
 
 /**
  * Tooltip Komponente
@@ -25,6 +25,7 @@ import { Component, ChangeDetectorRef, ElementRef } from '@angular/core';
   templateUrl: './tooltip.html',
 })
 export class SacTooltipComponent extends SacTooltipCommon {
+  // #region Constructors
 
   /**
    * Konstrukor
@@ -34,4 +35,18 @@ export class SacTooltipComponent extends SacTooltipCommon {
   constructor(cdRef: ChangeDetectorRef, ref: ElementRef) {
     super(cdRef, ref);
   }
+
+  // #endregion Constructors
+
+  // #region Protected Methods
+
+  /**
+   * Padding for Tooltip
+   * @returns Always 0. BS3 not require Padding
+   */
+  protected getTooltipOffset(): number {
+    return 0;
+  }
+
+  // #endregion Protected Methods
 }

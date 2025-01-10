@@ -3,8 +3,12 @@
     for="{{name}}"
     class="col-12 col-form-label"
     [ngClass]="[disablelabel === false ? (this.labelSizes | toLabelWidthCss) : 'sr-only', componentHeight | toLabelHeight]"
-    >{{label}}</label
-  >
+    >{{label}}<sac-tooltip
+      *ngIf="helptextmode === 'tooltip' && helptext"
+      [tooltiptext]="helptext"
+      [inlinemode]="true"
+      ><span [ngClass]="HelptextTooltipIcon" class="ml-1"></span> </sac-tooltip
+  ></label>
   <div
     class="col-12"
     [ngClass]="[disablelabel === false ?  (this.labelSizes | toControlWidthCss) : '']"
@@ -33,6 +37,7 @@
       <div class="input-group-append">
         <span class="input-group-text">{{currency}}</span>
       </div>
+
       <div
         *ngIf="isinlineerrorenabled && invalid && (dirty || touched)"
         class="invalid-feedback"
@@ -40,5 +45,12 @@
         {{ GetErrorMessage() | async }}
       </div>
     </div>
+    <small
+      *ngIf="helptextmode === 'text' && helptext"
+      class="help-block"
+      class="form-text text-muted"
+    >
+      {{helptext}}
+    </small>
   </div>
 </div>
