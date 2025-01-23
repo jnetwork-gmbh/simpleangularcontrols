@@ -1,37 +1,31 @@
 <h2>Button</h2>
-
-<div>Currently not supported</div>
-
 <form #myForm="sacform" labelsize="3">
   <div>Context Menü</div>
 
   <p>Default Menu</p>
   <div>
-    <div class="alert alert-info" role="alert">Currently not supported</div>
-    <!--   
     <sac-contextmenu>
       <sac-contextmenubutton text="Action 1"></sac-contextmenubutton>
       <sac-contextmenubutton text="Action 2"></sac-contextmenubutton>
       <sac-contextmenubutton text="Action 3"></sac-contextmenubutton>
     </sac-contextmenu>
-  --></div>
+  </div>
 
   <p>Button Right Aligned</p>
   <div class="d-flex flex-row-reverse">
     <div>
-      <div class="alert alert-info" role="alert">Currently not supported</div>
-      <!--       <sac-contextmenu>
+      <sac-contextmenu>
         <sac-contextmenubutton
           text="Action 1"
-          image="/icons/de.png"
+          image="/assets/icons/de.png"
         ></sac-contextmenubutton>
         <sac-contextmenubutton
           text="Action 1"
-          image="/icons/en.png"
+          image="/assets/icons/en.png"
         ></sac-contextmenubutton>
         <sac-contextmenubutton
           text="Action 1"
-          image="/icons/fr.png"
+          image="/assets/icons/fr.png"
         ></sac-contextmenubutton>
         <sac-contextmenubutton
           text="Action 2"
@@ -40,18 +34,17 @@
         ></sac-contextmenubutton>
         <sac-contextmenubutton
           text="Action 3"
-          icon="fa-pen"
+          icon="fas fa-pen"
         ></sac-contextmenubutton>
         <sac-contextmenubutton text="Action 4"></sac-contextmenubutton>
-      </sac-contextmenu> -->
+      </sac-contextmenu>
     </div>
   </div>
 
   <p>Button Center Aligned</p>
   <div class="d-flex justify-content-center">
     <div>
-      <div class="alert alert-info" role="alert">Currently not supported</div>
-      <!--       <sac-contextmenu>
+      <sac-contextmenu>
         <sac-contextmenubutton text="Action 1"></sac-contextmenubutton>
         <sac-contextmenubutton text="Action 2"></sac-contextmenubutton>
         <sac-contextmenusplitter></sac-contextmenusplitter>
@@ -59,13 +52,12 @@
           text="Action 3"
           [isdisabled]="true"
         ></sac-contextmenubutton>
-      </sac-contextmenu> -->
+      </sac-contextmenu>
     </div>
   </div>
   <p>Menu without Icon Colum</p>
   <div>
-    <div class="alert alert-info" role="alert">Currently not supported</div>
-    <!--     <sac-contextmenu>
+    <sac-contextmenu>
       <sac-contextmenubutton
         text="Action 1"
         isicondisabled="true"
@@ -85,12 +77,11 @@
         [isdisabled]="true"
         [isicondisabled]="true"
       ></sac-contextmenubutton>
-    </sac-contextmenu> -->
+    </sac-contextmenu>
   </div>
   <p>Menu with Custom Button</p>
   <div>
-    <div class="alert alert-info" role="alert">Currently not supported</div>
-    <!--   <sac-contextmenu [buttontemplate]="customButton" #contextmenu>
+    <sac-contextmenu [buttontemplate]="customButton" #contextmenu>
       <ng-template #customButton>
         <button
           type="button"
@@ -122,6 +113,6 @@
         [isdisabled]="true"
         [isicondisabled]="true"
       ></sac-contextmenubutton>
-    </sac-contextmenu> -->
+    </sac-contextmenu>
   </div>
 </form>

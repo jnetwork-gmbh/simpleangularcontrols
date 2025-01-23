@@ -8,6 +8,7 @@ export {
   SACBootstrap3ConfirmModule,
   ServiceConfirm,
 } from './controls/confirm/confirm.module';
+export * from './controls/contextmenu/contextmenu.module';
 export * from './controls/datetime/datetime.module';
 export * from './controls/dialog/dialog.module';
 export * from './controls/grid/grid.module';
@@ -33,6 +34,10 @@ export * from './controls/checkbox/checkbox';
 export * from './controls/checkbox/radiobutton';
 export * from './controls/checkbox/radiobuttons';
 export * from './controls/confirm/confirm';
+export * from './controls/contextmenu/contextmenu';
+export * from './controls/contextmenu/contextmenuanchor';
+export * from './controls/contextmenu/contextmenuitembutton';
+export * from './controls/contextmenu/contextmenuitemsplitter';
 export * from './controls/datetime/date';
 export * from './controls/datetime/dateselector';
 export * from './controls/datetime/datetime';

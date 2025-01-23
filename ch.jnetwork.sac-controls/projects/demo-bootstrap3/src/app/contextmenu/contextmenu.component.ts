@@ -5,7 +5,11 @@ import { Component } from '@angular/core';
   templateUrl: './contextmenu.component.html',
 })
 export class DemoContextmenuComponent {
+  // #region Public Methods
+
   public debugAction1(): void {
     alert('Action 1');
   }
+
+  // #endregion Public Methods
 }
